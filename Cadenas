@@ -1,1 +1,105 @@
+package balanceada
 
+import java.util.Scanner;
+import java.util.Stack;
+
+
+public class Balanceada {
+    Nodo inicio,fin;
+    int tamaño;
+    Scanner teclado = new Scanner(System.in);
+
+    
+    public Cola(){
+        inicio=fin=null;
+        tamaño=0;
+    }
+   
+    public boolean isEmpty(){
+        return inicio == null;
+    }
+
+
+
+    public boolean balanceada() {
+        System.out.println("Introduzca las cadenas");
+        Scanner in= new Scanner(System.in); 
+        String entrada=in.next();
+        Stack <Character>pila = new <Character>Stack();  
+        int i= 0; 
+        int tamanio=entrada.length(); 
+           for (int f = 0 ; f < entrada.length() ; f++)
+    	{
+    	    if (entrada.charAt(f) == '(' || entrada.charAt(f) == '[' || entrada.charAt(f) == '{') {
+    	    	pila.push(entrada.charAt(f));
+    	    } else {
+    	    	if (entrada.charAt(f)==')') {
+    	    	    if (pila.pop()!='(') {
+    	    	        return false;
+    	    	    }
+    	     	} else {
+    	    	    if (entrada.charAt(f)==']') {
+    	    	        if (pila.pop()!='[') {
+    	    	            return false;
+    	    	        }
+    	    	    } else {
+    	    	        if (entrada.charAt(f)=='}') {
+    	    	            if (pila.pop()!='{') {
+    	    	                return false;
+    	    	            }
+    	    	        }
+    	    	    }
+    	        }
+   	    }   
+        }
+        if (pila.empty()) {
+    	    return true;
+    	} else {
+   	    return false;
+    	}
+    }
+}
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+package balanceada;
+
+
+import Balanceada;
+import java.util.Scanner;
+import java.util.LinkedList;
+
+
+public class Balanceada {
+    Scanner leer = new Scanner(System.in);
+    Scanner in = new Scanner(System.in);
+    
+
+        public void menu(){
+        boolean salir = false;
+        int opcion;
+        
+        while(!salir){
+            
+           System.out.println("Es equilibrada o desiquilibrada");
+           opcion = in.nextInt();
+           
+           switch(opcion){
+               case 1:
+                   System.out.println("Balanceada");
+                   colaA.push(false,0);
+                   System.out.println("No Balanceada");
+                   colaB.push(false,0);
+                   break;
+                           
+               
+            }
+        }
+    }  
